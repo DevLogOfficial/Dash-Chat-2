@@ -18,7 +18,7 @@ class ChatMessage {
   }
 
   /// Create a ChatMessage instance from json data
-  factory ChatMessage.fromJson(Map<String, dynamic> jsonData) {
+  factory ChatMessage.fromJson(Map<dynamic, dynamic> jsonData) {
     return ChatMessage(
       id: jsonData['id']?.toString(),
       user: ChatUser.fromJson(jsonData['user'] as Map<String, dynamic>),
