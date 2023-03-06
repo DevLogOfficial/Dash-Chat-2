@@ -17,8 +17,7 @@ class ChatUser {
       profileImage: jsonData['profileImage']?.toString(),
       firstName: jsonData['firstName']?.toString(),
       lastName: jsonData['lastName']?.toString(),
-      customProperties:
-          Map<String, dynamic>.from(jsonData['customProperties'] as Map),
+      customProperties: jsonData['customProperties'] as Map<String, dynamic>,
     );
   }
 
