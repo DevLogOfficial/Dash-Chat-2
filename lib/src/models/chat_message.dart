@@ -3,6 +3,7 @@ part of dash_chat_2;
 /// {@category Models}
 class ChatMessage {
   ChatMessage({
+    String? id,
     required this.user,
     required this.createdAt,
     this.text = '',
@@ -12,7 +13,9 @@ class ChatMessage {
     this.mentions,
     this.status = MessageStatus.none,
     this.replyTo,
-  });
+  }) {
+    this.id = id ?? const Uuid().v4().toString();
+  }
 
   /// Create a ChatMessage instance from json data
   factory ChatMessage.fromJson(Map<String, dynamic> jsonData) {
@@ -45,6 +48,10 @@ class ChatMessage {
           : null,
     );
   }
+
+  /// Id of the message if no id is supplied a new id is assigned
+  /// using a [UUID v4] this behaviour could be overriden by provind
+  String? id;
 
   /// Text of the message (optional because you can also just send a media)
   String text;
