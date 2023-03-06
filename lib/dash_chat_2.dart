@@ -1,5 +1,6 @@
 library dash_chat_2;
 
+import 'dart:convert';
 import 'dart:math';
 
 import 'package:flutter/gestures.dart';
